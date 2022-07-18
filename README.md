@@ -26,3 +26,64 @@ Steps to Install Ubuntu 20.04.4 and ROS Using Virtual Box.
 
 
 
+ROS Noetic Installation steps:
+
+1-We should allow Ubuntu repositories (universe,multiverse,restricted). To do that, open new terminal then enter the following commands:
+
+
+sudo add-apt-repository universe
+
+then
+
+sudo add-apt-repository multiverse
+
+then
+
+sudo add-apt-repository restricted
+
+then
+
+sudo apt-get update
+
+
+
+2-Setup the computer to accept software from packages.ros.org by this command:
+
+sudo apt install curl 
+
+then
+
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+then
+
+sudo apt update
+
+
+
+3-Install Desktop full version:
+
+sudo apt install ros-noetic-desktop-full
+
+4-Setup the environment by these commands:
+
+source /opt/ros/noetic/setup.bash
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+echo "source /opt/ros/noetic/setup.zsh" >> ~/.zshrc
+source ~/.zshrc
+
+
+5-Install the dependencies for building packages:
+
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+sudo apt install python3-rosdep
+
+
+6-Initialize rosdep:
+
+sudo rosdep init
+rosdep update
+
+
+
